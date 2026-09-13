@@ -67,8 +67,7 @@ person committing the whole file at the end.
 | Liu Xinyao | `meta-llama/llama-3.1-8b-instruct` | `results/live/meta-llama_llama-3.1-8b-instruct.json` | |
 | Xie Yulong | `mistralai/mistral-nemo` | `results/live/mistralai_mistral-nemo.json` | |
 | Zhong Yingmei | v1 pass on `openai/gpt-4o-mini` | `results/descriptors/v1_live.json`, `results/descriptors/v2_live.json`, `results/descriptors/comparison.json` | This is D2(b)'s required v1-vs-v2 comparison, held to gpt-4o-mini only — not a 6th independent model. |
-
-**Extra, unassigned:** `results/live/qwen_qwen-2.5-72b-instruct.json` (`qwen/qwen-2.5-72b-instruct`) is a 6th live model in the repo beyond the 5 declared above. It isn't anyone's assignment in `TEAM_DECLARATION` — decide as a team whether to keep it (credit it to whoever actually ran it) or drop it from the headline comparison to keep the battery matching the declared table exactly.
+| Zhong Yingmei | `qwen/qwen-2.5-72b-instruct` | `results/live/qwen_qwen-2.5-72b-instruct.json` | 6th live model, beyond the 5 in `TEAM_DECLARATION`'s original table — assigned to Zhong Yingmei on top of the v1 pass above, since she's the last-listed member. Say in the report that the battery has 6 models, not 5, and why. |
 
 `results/live/model_comparison.json` (assembles all models) and
 `docs/D5_MODEL_BATTERY.md` — see Zhong Yingmei's section below (report/demo assembly).
