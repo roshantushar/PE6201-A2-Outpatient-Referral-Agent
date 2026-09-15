@@ -1,10 +1,8 @@
 # Contributions
 
-Matches the "Who owns what" table from `TEAM_DECLARATION` exactly (strand →
-feeds → owner). Two things aren't explicit in that table and are assumed
-here — flagged where they occur, adjust if your team divided them
-differently. Everyone commits their own section themselves so the commit
-history actually corroborates this file, per section 8 of the brief.
+Matches the "Who owns what" table from `TEAM_DECLARATION` (strand → feeds
+→ owner). Everyone commits their own section under their own git identity,
+so the commit history corroborates this file, per section 8 of the brief.
 
 ## Syedyaseen Roshan Tushar & Shen Shuo — the loop and the tools (D1, D2(a), D2(c))
 
@@ -44,18 +42,14 @@ history actually corroborates this file, per section 8 of the brief.
 - `docs/D6_COST_MODEL.md`
 - `results/cost/`
 
-## All members — evaluation cases (D4), 5–8 each
+## Evaluation cases (D4) — 15 given, 40 split across the team
 
-The 55 cases in `data/expected_outcomes_B.json` and their matching
-referrals in `data/generated/data_B/referrals.json` were written across
-the whole team. **Caveat, stated plainly:** both are single shared JSON
-files — git can't attribute individual case authorship inside one file
-after the fact the way it can for separate files owned by one person.
-If this needs to show up in the commit history rather than just this
-note, the cleanest fix is for each member to commit their own 9–10
-cases as a separate, named commit before the file is merged (e.g.
-`git commit -m "D4: 9 evaluation cases — Gong Xinyi"`), rather than one
-person committing the whole file at the end.
+`data/expected_outcomes_B.json` and `data/generated/data_B/referrals.json`
+hold 55 cases total: **15 shipped by NTU** (the fixed starting set every
+team gets) and **40 written by the team**, split roughly 5–8 each across
+the 6 of us, per the brief's own guidance for a 6-person team. Both files
+are shared JSON, so git can't attribute individual case authorship inside
+one file the way it can for separate files owned by one person.
 
 ## Live model battery — everyone, one model each (D5(b))
 
