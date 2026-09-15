@@ -2,8 +2,11 @@
 """
 D6 - COST TO SERVE
 ====================================================================
-D5(b)'s live model battery is now complete (5 models, 107 trials each,
-real OpenRouter usage) - see results/live/model_comparison.json. This
+D5(b)'s live model battery is now complete (5 comparable models, 95
+trials each, real OpenRouter usage - a 6th model, claude-3-haiku, was
+also run but is excluded from the headline comparison as a genuine
+protocol-compliance failure, see docs/D5_MODEL_BATTERY.md) - see
+results/live/model_comparison.json. This
 script therefore reports a MEASURED cost-and-success-rate row per model
 (_measured_all_models) as the primary output, in addition to keeping
 the original ILLUSTRATIVE 80/90/95/99% sweep (against the scripted

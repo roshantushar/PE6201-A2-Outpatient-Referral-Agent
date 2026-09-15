@@ -97,7 +97,8 @@ def main():
     # Tie to D6: this overhead is paid on EVERY turn of EVERY run, not
     # once. Use this project's own measured turn counts (D1: median 2,
     # book-track worst case 5) to show the compounding cost over one full
-    # 45-case evaluation pass.
+    # evaluation pass (55 cases, dynamically read from final_eval.json
+    # below - not hardcoded, so this stays correct as the set grows).
     import statistics
     scripted_path = os.path.join(HERE, "..", "..", "results", "scripted", "final_eval.json")
     with open(scripted_path, encoding="utf-8") as fh:
@@ -112,12 +113,12 @@ def main():
         "trimmed_chars": trimmed_chars, "trimmed_tokens_est": trimmed_tok,
         "larger_chars": larger_chars, "larger_tokens_est": larger_tok,
         "overhead_tokens_est_per_turn": overhead_tok,
-        "total_turns_one_45case_pass": total_turns_one_pass,
-        "wasted_tokens_est_one_45case_pass": wasted_tokens_one_pass,
+        "total_turns_one_full_pass": total_turns_one_pass,
+        "wasted_tokens_est_one_full_pass": wasted_tokens_one_pass,
         "unnecessary_tools_added_for_this_measurement": list(UNNECESSARY_DESCRIPTORS),
         "never_called_by_reference_solver": True,
         "note": "Both candidate tools are never called by "
-                "backends.ScriptedPolicyBackend on ANY of the 45 real "
+                "backends.ScriptedPolicyBackend on ANY of the 55 real "
                 "cases, because their function is already covered by "
                 "check_referral_criteria's pre-computed verdicts or by the "
                 "referral's own `specialty` field. Their entire cost "

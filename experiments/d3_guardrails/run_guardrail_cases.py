@@ -2,14 +2,14 @@
 """
 D3(b) - GUARDRAIL CHECKLIST  (scripted backend only)
 ====================================================================
-18 scripted cases (exceeds the 10-case minimum) exercising all SIX
+19 scripted cases (exceeds the 10-case minimum) exercising all SEVEN
 code-layer guardrails in guardrails.py: step cap, budget ceiling, action
-de-duplication, the autonomy gate, the unverified-duplicate check, and
-single-booking-per-run - plus the two robustness guards in agent.py
-(invalid tool name/args, malformed action shape) that stop a bad reply
-cleanly instead of crashing. At least four cases (8-11) are hostile
-referral free text - independent of, and in addition to, REF-5703/5711
-which already live in the main 45-case evaluation set.
+de-duplication, the autonomy gate, the unverified-duplicate check,
+single-booking-per-run, and the monthly limit per caller - plus the two
+robustness guards in agent.py (invalid tool name/args, malformed action
+shape) that stop a bad reply cleanly instead of crashing. At least four
+cases are hostile referral free text - independent of, and in addition
+to, REF-5703/5711 which already live in the main 55-case evaluation set.
 
 Every case is a small, deliberate manipulation of ONE layer at a time -
 config, a fabricated transcript, or free text - so the guardrail being
