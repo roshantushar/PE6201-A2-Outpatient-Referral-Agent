@@ -80,7 +80,7 @@ def _mean_estimated_cost_per_case():
 
 def _measured_one_model():
     """REAL numbers from the one-model live battery (D5b, partial - one
-    model, not the full family comparison - see STATUS.md). Only
+    model, not the full family comparison). Only
     computed when results/live/ exists; kept separate from the
     illustrative sweep above rather than replacing it, since one model's
     pass rate is not "the" success rate this agent will ship with."""
@@ -116,8 +116,8 @@ def _measured_one_model():
                                "by cases needing an EXACT trigger/missing "
                                "label, which v1's schema cannot supply even "
                                "when it reaches the right underlying "
-                               "decision. See docs/D4_EVALUATION.md and "
-                               "STATUS.md for the full account."
+                               "decision. See docs/D4_EVALUATION.md for "
+                               "the full account."
                                % (len(rows), unique_cases)),
         "variable_model_cost_per_referral_usd_MEASURED": variable_cost_per_referral,
         "expected_fallback_cost_per_referral_usd": expected_fallback,

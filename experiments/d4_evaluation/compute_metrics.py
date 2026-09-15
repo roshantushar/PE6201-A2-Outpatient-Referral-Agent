@@ -60,7 +60,7 @@ def build_rows(source):
         record = r["record"]
         # The OFFICIAL pass/fail definition (decision, trigger, missing,
         # booked, required/forbidden tools, book_slot count) - this is
-        # what was reported everywhere else (STATUS.md, comparison.json)
+        # what was reported everywhere else (comparison.json)
         # and must not silently change here. code_check_breakdown adds
         # EXTRA diagnostic checks (e.g. "no unnecessary slot query") that
         # the assignment lists as separate, "also useful" metrics, NOT as

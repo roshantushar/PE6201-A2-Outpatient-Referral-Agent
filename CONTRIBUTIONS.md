@@ -4,17 +4,19 @@ Matches the "Who owns what" table from `TEAM_DECLARATION` (strand → feeds
 → owner). Everyone commits their own section under their own git identity,
 so the commit history corroborates this file, per section 8 of the brief.
 
-## Syedyaseen Roshan Tushar & Shen Shuo — the loop and the tools (D1, D2(a), D2(c))
+## Syedyaseen Roshan Tushar — the agent loop and tool set (D0, D1, D2(a), D7)
 
-- `src/agent.py`, `src/decision_log.py` (D1)
+- `docs/D0_AGENT_JUSTIFICATION.md`, `experiments/d0/reliability_calc.py`, `experiments/d0/reliability_calc.json`
+- `src/agent.py`, `src/decision_log.py`, `src/config.py`, `src/prompt.py` (D1)
 - `docs/D1_AGENT_LOOP.md`
-- `src/tools.py`, `experiments/d2a_tools/tool_set_comparison.py` (D2(a))
-- `experiments/d2c_parallelism/run_comparison.py`, `experiments/d2c_parallelism/plot_token_growth.py` (D2(c))
-- `results/descriptors/tool_set_comparison.json`, `results/parallelism/`, `results/live/token_growth_all_models.png`, `results/live/token_growth_fits.json`
-- `docs/D2_TOOL_DESIGN.md` — **shared with Gong Xinyi**: this one file covers D2(a)/D2(c) (this pair) and D2(b) (Gong Xinyi) together. Whoever commits it should say in the commit message which sections they wrote, or split it into two docs if you'd rather the history read cleanly per-author.
-- `docs/D0_AGENT_JUSTIFICATION.md`, `experiments/d0/reliability_calc.py`, `experiments/d0/reliability_calc.json` — **not in the table's strand list; assumed here** since D0 precedes and sets up D1. Move it if your team assigned it elsewhere.
-- `docs/D7_FAILURES.md`, `src/demo_loop_failure.py`, `src/backends.py`, `experiments/d7_failures/` — **also not in the table; assumed here** since both reproduced failures extend this pair's own loop/tool-interface work. Move it if assigned elsewhere.
-- `src/config.py`, `src/prompt.py` — shared infrastructure the loop depends on.
+- `src/tools.py`, `experiments/d2a_tools/tool_set_comparison.py`, `results/descriptors/tool_set_comparison.json` (D2(a))
+- `docs/D7_FAILURES.md`, `src/demo_loop_failure.py`, `src/backends.py`, `experiments/d7_failures/`, `results/d7/`
+- `docs/D2_TOOL_DESIGN.md` — shared with Gong Xinyi (D2(a) here, D2(b) hers).
+
+## Shen Shuo — calling more than one tool in a turn (D2(c))
+
+- `experiments/d2c_parallelism/run_comparison.py`, `experiments/d2c_parallelism/plot_token_growth.py`
+- `results/parallelism/`, `results/live/token_growth_all_models.png`, `results/live/token_growth_fits.json`
 
 ## Gong Xinyi — descriptors, the v1-to-v2 rewrite, guardrail layer (D2(b), D3)
 
@@ -57,11 +59,11 @@ one file the way it can for separate files owned by one person.
 |---|---|---|---|
 | Syedyaseen Roshan Tushar | `openai/gpt-4o-mini` | `results/live/openai_gpt-4o-mini.json` | |
 | Shen Shuo | `anthropic/claude-3-haiku` | `results/live/anthropic_claude-3-haiku.json` | Genuine 0% result — a real protocol-compliance failure (never follows the turn-by-turn format), not a harness bug. Kept as raw data, excluded from the headline D5(b) table — see `docs/D5_MODEL_BATTERY.md`. |
-| Gong Xinyi | `google/gemini-1.5-flash` | `results/live/google_gemini-2.5-flash-lite.json` | **Substituted**: `gemini-1.5-flash` does not exist on this OpenRouter account's catalog (verified via `/v1/models`). Ran the closest same-tier equivalent, `gemini-2.5-flash-lite`, instead — say this substitution and why in the report. |
+| Gong Xinyi | `google/gemini-1.5-flash` | `results/live/google_gemini-2.5-flash-lite.json` | **Substituted**: `gemini-1.5-flash` does not exist on this OpenRouter account's catalog (verified via `/v1/models`). Ran the closest same-tier equivalent, `gemini-2.5-flash-lite`, instead. |
 | Liu Xinyao | `meta-llama/llama-3.1-8b-instruct` | `results/live/meta-llama_llama-3.1-8b-instruct.json` | |
 | Xie Yulong | `mistralai/mistral-nemo` | `results/live/mistralai_mistral-nemo.json` | |
 | Zhong Yingmei | v1 pass on `openai/gpt-4o-mini` | `results/descriptors/v1_live.json`, `results/descriptors/v2_live.json`, `results/descriptors/comparison.json` | This is D2(b)'s required v1-vs-v2 comparison, held to gpt-4o-mini only — not a 6th independent model. |
-| Zhong Yingmei | `qwen/qwen-2.5-72b-instruct` | `results/live/qwen_qwen-2.5-72b-instruct.json` | 6th live model, beyond the 5 in `TEAM_DECLARATION`'s original table — assigned to Zhong Yingmei on top of the v1 pass above, since she's the last-listed member. Say in the report that the battery has 6 models, not 5, and why. |
+| Zhong Yingmei | `qwen/qwen-2.5-72b-instruct` | `results/live/qwen_qwen-2.5-72b-instruct.json` | 6th live run — beyond the 5 in `TEAM_DECLARATION`'s original table, assigned to Zhong Yingmei on top of her v1 pass. **6 models were run in total; 5 form the comparable D5(b) headline battery** — Shen Shuo's `claude-3-haiku` is excluded from that headline table as a genuine protocol-compliance failure, not folded into a "6 comparable models" claim. |
 
 `results/live/model_comparison.json` (assembles all models) and
 `docs/D5_MODEL_BATTERY.md` — see Zhong Yingmei's section below (report/demo assembly).
@@ -69,13 +71,13 @@ one file the way it can for separate files owned by one person.
 ## Zhong Yingmei — report and demo assembly
 
 - `docs/D5_MODEL_BATTERY.md`, `results/live/model_comparison.json`, `experiments/d5_models/run_live_battery.py` (assembling the whole battery above)
-- `README.md`, `STATUS.md`, `docs/REPORT_EVIDENCE.md`
+- `README.md`, `docs/REPORT_EVIDENCE.md`
 - `notebooks/PE6201_A2_ProblemB_Experiments.ipynb`
 - The team report (sections 4 and 5) and the demo recording — not files in this repo, produced separately per the brief's submission requirements.
 
-## Repo scaffolding (unassigned in the table — commit with whichever section you push first)
+## Repo scaffolding
 
-`.gitignore`, `requirements.txt`, `CONTRIBUTIONS.md` itself.
+`.gitignore`, `requirements.txt`, `CONTRIBUTIONS.md` itself — Syedyaseen Roshan Tushar.
 
 ## Contribution statement
 

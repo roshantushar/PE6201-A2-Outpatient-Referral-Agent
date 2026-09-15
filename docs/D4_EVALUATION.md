@@ -316,11 +316,14 @@ is exactly what the policy exists to catch.
 
 `python3 src/run_eval.py`: **95/95 trials passed (100%)**, median 2
 turns, worst case 5 turns, zero step-cap hits, US$0.27 total (scripted
-**estimate**, see `STATUS.md`). This is the code-check half of D4 — the
-judgement queue
-(`results/scripted/final_eval.json`'s `judgement_queue` field) is written
-and populated but has not yet been worked through by a human grader in
-this session (remaining human task — see `STATUS.md`).
+**estimate**). This is the code-check half of D4 — the judgement check
+(a different model, `anthropic/claude-haiku-4.5`, grading
+`openai/gpt-4o-mini`'s answers via `src/judge.py`) is complete: **74.6%
+(41/55)**, `results/evaluation/judge_results_live.json`. The gap
+between the two is real, not an artifact — see
+`docs/D4_EVALUATION_METRICS.md`. (`final_eval.json`'s own
+`judgement_queue` field is an earlier, unused placeholder structure,
+superseded by the actual live-judge run above.)
 
 ## Note: all live numbers are current, re-run against the final 55-case set
 
@@ -328,6 +331,5 @@ this session (remaining human task — see `STATUS.md`).
 `measured_one_model` blocks in `experiments/d0` and `results/cost/` were
 all re-run against the CURRENT, final 55-case/95-trial (35 book / 20
 negative) evaluation set after both rebalances described above. See
-`docs/D5_MODEL_BATTERY.md` and `STATUS.md` for the exact, current
-figures — nothing in this project's reported numbers predates the final
-dataset shape.
+`docs/D5_MODEL_BATTERY.md` for the exact, current figures — nothing in
+this project's reported numbers predates the final dataset shape.

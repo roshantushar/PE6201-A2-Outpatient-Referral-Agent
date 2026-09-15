@@ -282,7 +282,7 @@ def make_scripted(case_id, parallel=True, force_moves=None):
 class LiveBackend:
     """Real model via OpenRouter. Costs money. Used only by D2(b)'s live
     comparison and D5(b)'s battery - both unrun in this environment, see
-    STATUS.md. Captures ACTUAL usage from the API response, fixing the
+    Captures ACTUAL usage from the API response, fixing the
     scaffold's deliberate zero-tokens placeholder."""
 
     name = "live"

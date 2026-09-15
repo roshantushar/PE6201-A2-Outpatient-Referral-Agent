@@ -162,7 +162,6 @@ PE6201-A2-Outpatient-Referral-Agent/
 │
 ├── notebooks/
 ├── CONTRIBUTIONS.md
-├── STATUS.md
 ├── requirements.txt
 └── README.md
 ```
@@ -483,7 +482,6 @@ See:
 ```text
 results/descriptors/
 docs/D2_TOOL_DESIGN.md
-STATUS.md
 ```
 
 ---

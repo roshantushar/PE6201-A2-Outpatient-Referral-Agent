@@ -18,7 +18,7 @@ be shortened by grouping.
 
 Both run on the free, deterministic scripted backend - no live call
 needed to measure turns/calls/estimated tokens/cost, though the ESTIMATE
-label matters (see docs and STATUS.md): real per-token cost only comes
+label matters (see docs/D6_COST_MODEL.md): real per-token cost only comes
 from the live battery.
 ====================================================================
 """
@@ -120,7 +120,7 @@ def main():
     comparison = {
         "case_id": CASE,
         "note": "Token/cost figures are the scripted backend's ESTIMATE "
-                "function, not a live measurement - see STATUS.md.",
+                "function, not a live measurement.",
         "sequential": seq_s,
         "parallel": par_s,
         "delta": {

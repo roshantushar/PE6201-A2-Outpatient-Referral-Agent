@@ -88,7 +88,7 @@ def main():
     if config.BACKEND != "live":
         sys.exit(
             "\n  This experiment needs config.BACKEND = 'live' and an API key.\n"
-            "  Not run: BACKEND is %r in this environment (see STATUS.md).\n"
+            "  Not run: BACKEND is %r in this environment.\n"
             "  To run for real:\n"
             "    export OPENROUTER_API_KEY='sk-or-...'\n"
             "    edit src/config.py: BACKEND = 'live'\n"

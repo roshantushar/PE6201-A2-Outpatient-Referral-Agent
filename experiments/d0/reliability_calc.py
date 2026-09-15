@@ -11,10 +11,10 @@ turns per docs/D4_EVALUATION.md). That P is NOT a live model's success
 probability; it is the success rate of a hand-verified, non-probabilistic
 walk through the real tools, so s computed from it is a CEILING /
 sanity-check value, not the agent's true per-step reliability. The true
-P (and hence true s) can only come from the D5(b) live battery - see
-STATUS.md. This script is written so re-running it against
-results/live/model_comparison.json (once it exists) needs no code change,
-only pointing SOURCE at the live summary instead.
+P (and hence true s) can only come from the D5(b) live battery (now
+complete - see docs/D5_MODEL_BATTERY.md and results/live/). This script
+is written so re-running it against results/live/model_comparison.json
+needs no code change, only pointing SOURCE at the live summary instead.
 ====================================================================
 """
 import json
@@ -63,7 +63,7 @@ def _one_version(path, label):
 
 
 def _live_block():
-    """REAL P, T and s for v2 (D5b, one model - see STATUS.md), PLUS a
+    """REAL P, T and s for v2 (D5b, one model), PLUS a
     real v1-vs-v2 comparison (D5's own required experiment) on the
     IDENTICAL-trial-count, current, rebalanced eval set - both live,
     both measured, so the "is the

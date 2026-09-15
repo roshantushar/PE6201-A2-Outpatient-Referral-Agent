@@ -5,8 +5,7 @@ to the file that backs it, and the command that reproduces it. Use this when
 writing the final report so every figure cites its source file and trial
 count, per the assignment's "before you submit" checklist.
 
-All D0–D7 deliverables below are **COMPLETE** — see `STATUS.md` for the
-full per-stage table. Every number here is real, measured, on-disk
+All D0–D7 deliverables below are **COMPLETE**. Every number here is real, measured, on-disk
 evidence; nothing in this file is illustrative or projected. The
 evaluation set was rebalanced twice after its original 69%-negative
 design (see `docs/D4_EVALUATION.md`'s "Rebalance history" section) and

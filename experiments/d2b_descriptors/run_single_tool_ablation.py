@@ -206,7 +206,7 @@ def main():
     if config.BACKEND != "live":
         sys.exit(
             "\n  This experiment needs config.BACKEND = 'live' and an API key.\n"
-            "  Not run: BACKEND is %r in this environment (see STATUS.md).\n"
+            "  Not run: BACKEND is %r in this environment.\n"
             % config.BACKEND)
 
     os.makedirs(OUT_DIR, exist_ok=True)

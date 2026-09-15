@@ -2,15 +2,13 @@
 """
 D5(b) - LIVE MODEL BATTERY
 ====================================================================
-NOT YET RUN in this environment - see STATUS.md. Only to be run after:
-  * the evaluation set is frozen (data/expected_outcomes_B.json - done)
-  * the v2 prompt is frozen (src/prompt.py DESCRIPTOR_SETS["v2"] - done)
-  * tools are frozen (src/tools.py - done)
-  * guards are frozen (src/guardrails.py, config.py limits - done)
-  * the scripted run works (results/scripted/final_eval.json - done,
-    100% pass, see STATUS.md)
+Run complete: 6 models, on the full 55-case/95-trial evaluation set
+(results/live/*.json, results/live/model_comparison.json) - 5 form the
+comparable D5(b) headline battery; a 6th (claude-3-haiku) is retained
+separately as a genuine protocol-compliance failure. See
+docs/D5_MODEL_BATTERY.md for the full account.
 
-Holds fixed: the v2 prompt, the full 35-case data set, the tool set,
+Holds fixed: the v2 prompt, the full 55-case data set, the tool set,
 the guardrails, autonomy, and all other config. Only MODEL changes
 across the models listed in MODELS below - edit that list to the
 families you have access to via OpenRouter.
@@ -88,7 +86,7 @@ def main():
     if config.BACKEND != "live":
         sys.exit(
             "\n  This experiment needs config.BACKEND = 'live' and an API key.\n"
-            "  Not run: BACKEND is %r in this environment (see STATUS.md).\n"
+            "  Not run: BACKEND is %r in this environment.\n"
             % config.BACKEND)
 
     os.makedirs(OUT_DIR, exist_ok=True)

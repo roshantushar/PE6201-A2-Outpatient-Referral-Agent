@@ -1,6 +1,6 @@
 {
   "case_id": "REF-5602",
-  "note": "Token/cost figures are the scripted backend's ESTIMATE function, not a live measurement - see STATUS.md.",
+  "note": "Token/cost figures are the scripted backend's ESTIMATE function, not a live measurement.",
   "sequential": {
     "label": "sequential",
     "case_id": "REF-5602",
@@ -11,7 +11,7 @@
     "tokens_out_estimate": 770,
     "total_tokens_estimate": 38220,
     "cost_usd_estimate": 0.006079,
-    "seconds": 0.002,
+    "seconds": 0.001,
     "evidence": [
       "get_referral",
       "check_referral_criteria",

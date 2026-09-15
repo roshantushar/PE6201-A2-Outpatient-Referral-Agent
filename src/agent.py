@@ -204,8 +204,8 @@ def run_case(case_id, approve=None, verbose=False, parallel=True,
             # [["request_information", {"missing": "visual field test
             # VF-01"}]]} - instead of using the "final" shape, even
             # though it derived the exact right value (observed
-            # reproducibly on openai/gpt-4o-mini, REF-5614 - see
-            # STATUS.md). This is an unambiguous shape confusion, not a
+            # reproducibly on openai/gpt-4o-mini, REF-5614).
+            # This is an unambiguous shape confusion, not a
             # reasoning error: reinterpret it as the "final" move it
             # clearly meant, rather than either fabricating a value or
             # failing a correct answer over its shape.
@@ -224,8 +224,8 @@ def run_case(case_id, approve=None, verbose=False, parallel=True,
                 # A live model can name the booking with clinic/date/time
                 # as TOP-LEVEL keys in "final" instead of nesting them
                 # under "booked", despite the prompt asking for the
-                # nested shape (observed on openai/gpt-4o-mini - see
-                # STATUS.md). Normalise that ONE harmless formatting
+                # nested shape (observed on openai/gpt-4o-mini).
+                # Normalise that ONE harmless formatting
                 # variant rather than failing a correct booking over it;
                 # this does not touch or invent any value, it only
                 # regroups keys the model already provided.
@@ -256,7 +256,7 @@ def run_case(case_id, approve=None, verbose=False, parallel=True,
                 # - it reasoned correctly (found a real slot) but simply
                 # asserted the outcome in prose instead of performing the
                 # tool call the prompt explicitly requires (observed on
-                # openai/gpt-4o-mini, e.g. REF-6001 - see STATUS.md). The
+                # openai/gpt-4o-mini, e.g. REF-6001). The
                 # same principle as the duplicate-check poka-yoke applies:
                 # never accept a claimed irreversible action as having
                 # happened - either complete it for real (still through

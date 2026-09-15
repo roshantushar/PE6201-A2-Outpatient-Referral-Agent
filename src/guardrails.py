@@ -138,7 +138,7 @@ class Guardrails:
         already called it). If a genuine future appointment in the same
         specialty exists, the booking is refused outright - regardless
         of what the model's own reasoning concluded. This closes a gap a
-        prompt instruction alone could not: see STATUS.md, where
+        prompt instruction alone could not - a live run of
         openai/gpt-4o-mini skipped this exact check on every live
         booking trial."""
         if duplicate:

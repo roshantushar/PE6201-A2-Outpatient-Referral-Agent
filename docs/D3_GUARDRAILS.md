@@ -13,7 +13,7 @@ development surfaced the need for:
 2. **Token/budget ceiling** — stop after `config.MAX_TOKENS_PER_RUN` tokens.
 3. **Action de-duplication** — stop the instant an identical `(tool, args)` call repeats.
 4. **Autonomy gate** — `suggest` / `confirm` / `act`, sitting **immediately in front of `book_slot`**, not in front of the agent as a whole (`guardrails.gate`, called only from `agent.py`'s `_verified_book_slot`).
-5. **Unverified-duplicate** — refuses `book_slot` if a genuine future same-specialty appointment exists, even if the model never checked or ignored the result (closes the gap found via live testing — see `STATUS.md`).
+5. **Unverified-duplicate** — refuses `book_slot` if a genuine future same-specialty appointment exists, even if the model never checked or ignored the result (closes the gap found via live testing).
 6. **Single-booking-per-run** — refuses a *second* successful `book_slot`, even with completely different arguments. Added this round after directly testing "attempt to call `book_slot` twice": action de-duplication (#3) only catches an *identical* repeat, so a model that books one slot and then books a *different* one too would otherwise double-book the patient with neither guard noticing — see the case below.
 7. **Monthly limit per caller** — refuses a new run for a CALLER (the referring clinic — the natural caller identity for Problem B) once it has made `config.MAX_MONTHLY_REQUESTS_PER_CALLER` (500) requests this period. Checked as early as possible: the instant `get_referral` resolves the caller's identity, before any further tool call. Unlike guardrails #1–#6, this is deliberately **cross-run state** (usage accumulated over time, in a module-level counter — `guardrails._monthly_request_counts`), not per-run state reset for every case — the one guardrail in this project that is NOT reset for D4's "every case starts clean" isolation rule, because its entire purpose is remembering usage *across* runs. `guardrails.reset_monthly_counts()` exists so tests (and a real deployment's billing-period rollover) can clear it deliberately.
 
@@ -56,7 +56,7 @@ guard actually firing rather than being decorative.
 ### Why the budget ceiling is 60,000 tokens
 
 Measured on the same set: median 9,780 tokens, worst case 29,460 tokens
-(scripted **estimate** — see `STATUS.md`). `MAX_TOKENS_PER_RUN=60000` is
+(scripted **estimate**). `MAX_TOKENS_PER_RUN=60000` is
 roughly double the worst observed legitimate run, for the same reason as
 the step cap: enough headroom that a normal run — including a live
 model's typically higher token usage per turn than the scripted

@@ -8,7 +8,7 @@
   "tokens_out_estimate": 770,
   "total_tokens_estimate": 38220,
   "cost_usd_estimate": 0.006079,
-  "seconds": 0.002,
+  "seconds": 0.001,
   "evidence": [
     "get_referral",
     "check_referral_criteria",

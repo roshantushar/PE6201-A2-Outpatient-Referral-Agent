@@ -44,7 +44,7 @@ clarity, and NOT masked by the structural safety net.
 ON THE SCRIPTED BACKEND, NOTHING HERE IS SENT - the scripted backend
 replays pre-written moves and never consults a model, which is exactly
 why the v1-vs-v2 comparison can only be measured on the LIVE battery
-(see results/descriptors/; see docs/D2_TOOL_DESIGN.md and STATUS.md).
+(see results/descriptors/ and docs/D2_TOOL_DESIGN.md).
 ====================================================================
 """
 import tools

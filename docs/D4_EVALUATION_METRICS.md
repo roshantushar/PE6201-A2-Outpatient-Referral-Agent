@@ -65,7 +65,7 @@ the first 45 cases judged, producing a contaminated 6.7% pass rate that
 reflected a missing-data artifact, not the agent's write-up quality.
 Fixed in `agent.py` (three `evidence.append()` sites now include
 `"observation": result`), the live battery was re-run, and the judge was
-re-run against the corrected data — see `STATUS.md` for the full account.
+re-run against the corrected data.
 **This is a genuine improvement to the project's audit trail**, not just
 a fix for this one report: every decision record now carries what each
 tool actually returned, not just that it was called.

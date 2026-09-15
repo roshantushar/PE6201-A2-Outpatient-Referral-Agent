@@ -312,7 +312,7 @@ step), applied one layer up: poka-yoke #2 stops a bad booking from
 completing even if attempted; poka-yoke #3 stops the precondition for
 attempting one from being skippable in the first place. Measured effect:
 this single fix raised the live pass rate on `openai/gpt-4o-mini`, v2
-prompt, same 55 trials, from 47.3% to 89.1% (see `STATUS.md`) — far more
+prompt, same 55 trials, from 47.3% to 89.1% — far more
 than any prompt wording change managed on its own, which is itself the
 argument for *where* a safety-critical check belongs: in code the model
 cannot skip, not in a sentence it can.
@@ -342,7 +342,7 @@ already on record, when a prompt version's answer-format instructions
 never named that field at all (this is what finally separated "the model
 booked correctly" from "the write-up happened to mention it") - this
 took the same 55-trial, v2-prompt pass rate (on the eval set as it stood
-at the time) from 89.1% to 100% (see `STATUS.md`'s full history).
+at the time) from 89.1% to 100%.
 
 Four poka-yokes now span every layer a value from the model passes
 through before an irreversible action: the tool signature (#1, #2), and
